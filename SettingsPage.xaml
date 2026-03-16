@@ -1,0 +1,56 @@
+<UserControl x:Class="LSBROWSER_CLEAN.SettingsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:LSBROWSER_CLEAN.Controls"
+             Background="Transparent">
+
+    <Grid>
+
+        <Grid.Effect>
+            <BlurEffect Radius="18"/>
+        </Grid.Effect>
+
+        <Grid Background="#40FFFFFF"/>
+
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <TextBlock Text="LS Browser"
+                           FontSize="28"
+                           FontWeight="SemiBold"
+                           Foreground="#EEDFDCDC"
+                           HorizontalAlignment="Center"
+                           Margin="0,12"/>
+
+                <TextBlock Text="Layout Mode"
+                           FontSize="22"
+                           FontWeight="Medium"
+                           Foreground="#FFE8E8E8"
+                           HorizontalAlignment="Center"
+                           Margin="0,12"/>
+
+                <controls:LSSquircleSelector x:Name="LayoutSelector"
+                                             Width="260"
+                                             Height="200"
+                                             HorizontalAlignment="Center"
+                                             Margin="0,12"/>
+
+                <TextBlock Text="Choose how LS Browser arranges its interface."
+                           FontSize="14"
+                           Foreground="#CCFFFFFF"
+                           HorizontalAlignment="Center"
+                           Margin="0,12"/>
+
+                <TextBlock Text="Saved automatically"
+                           FontSize="12"
+                           Foreground="#99FFFFFF"
+                           HorizontalAlignment="Center"
+                           Margin="0,12"/>
+
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LS Browser Home</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #050509;
+        font-family: "Segoe UI", sans-serif;
+        color: white;
+        overflow: hidden;
+    }
+
+    .center-wrap {
+        position: absolute;
+        top: 46%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 480px;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: white;
+    }
+
+    .subtitle {
+        font-size: 15px;
+        color: #bbbbbb;
+        margin-bottom: 28px;
+    }
+
+    .search-container {
+        width: 100%;
+        background: rgba(255,255,255,0.12);
+        border: 1px solid rgba(255,255,255,0.25);
+        border-radius: 18px;
+        padding: 10px 14px;
+        backdrop-filter: blur(18px);
+        display: flex;
+        align-items: center;
+    }
+
+    .search-input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        color: white;
+    }
+
+    .search-input::placeholder {
+        color: #cccccc;
+    }
+</style>
+
+<script>
+    function doSearch(event) {
+        if (event.key === "Enter") {
+            const query = document.getElementById("search").value.trim();
+            if (query.length === 0) return;
+
+            // If it's a URL, navigate directly
+            if (query.startsWith("http://") || query.startsWith("https://")) {
+                window.location.href = query;
+                return;
+            }
+
+            // Otherwise, Bing search
+            const encoded = encodeURIComponent(query);
+            window.location.href = "https://www.bing.com/search?q=" + encoded;
+        }
+    }
+</script>
+
+</head>
+<body>
+
+<div class="center-wrap">
+    <div class="title">LS Browser</div>
+    <div class="subtitle">Start with a thought, a place, or a URL.</div>
+
+    <div class="search-container">
+        <input id="search"
+               class="search-input"
+               type="text"
+               placeholder="Search or enter a URL..."
+               onkeydown="doSearch(event)" />
+    </div>
+</div>
+
+</body>
+</html>
